@@ -1,27 +1,31 @@
 public class Item {
-    private String name;
-    private double price;
+  private String itemName;
+  private double itemPrice;
 
-    public Item(String name, double price) {
-        if (price <= 0) {
-            throw new IllegalArgumentException("Price must be greater than zero");
+public Item(String itemName, double itemPrice) {
+ this.itemName = itemName;
+
+   if (itemPrice > 0) {
+     this.itemPrice = itemPrice;
+    } else {
+      System.out.println("Invalid price for " + itemName + ", setting it to 0.");
+       this.itemPrice = 0;
         }
-        this.name = name;
-        this.price = price;
     }
 
-    public String getName() {
-        return name;
+public String getItemName() {
+        return itemName;
     }
 
-    public double getPrice() {
-        return price;
+public double getItemPrice() {
+        return itemPrice;
     }
 
-    public double calculateTotal(int quantity) {
-        if (quantity < 0) {
-            throw new IllegalArgumentException("Quantity cannot be negative");
-        }
-        return price * quantity;
+public double calculateSubtotal(int quantity) {
+    if (quantity < 0) {
+      System.out.println("Invalid quantity for " + itemName + ", treating it as 0.");
+         quantity = 0;
+     }
+        return itemPrice * quantity;
     }
 }
