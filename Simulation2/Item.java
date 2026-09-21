@@ -1,23 +1,23 @@
 public class Item {
 
-    private String itemName;
-    private double itemPrice;
+    private String Name;
+    private double Price;
 
     
-    public Item(String itemName, double itemPrice) {
-        if (itemPrice <= 0) {
+    public Item(String Name, double Price) {
+        if (Price <= 0) {
             throw new IllegalArgumentException("Price must be greater than zero");
         }
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
+        this.Name = Name;
+        this.Price = Price;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getName() {
+        return Name;
     }
 
     public double getPrice() {
-        return itemPrice;
+        return Price;
     }
 
     
@@ -25,6 +25,6 @@ public class Item {
         if (quantity < 0) {
             throw new IllegalArgumentException("Quantity cannot be negative");
         }
-        return itemPrice * quantity;
+        return Price * quantity;
     }
 }
