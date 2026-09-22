@@ -3,13 +3,5 @@ public class NoDiscountItem extends Item {
         super(name, price);
     }
 
-    @Override
-    public double getFinalPrice() {
-        return getPrice(); // No discount applied
-    }
-
-    @Override
-    public String toString() {
-        return getName() + " - Price: " + getPrice() + " (No Discount)";
-    }
+    // No override needed - Item's calculateTotal() already does the right thing
 }
